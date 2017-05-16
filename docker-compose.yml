@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  node-service-1:
+    image: "local/node-image:${TAG}"
+    command: node node-service-1
+    environment:
+      - NODE_ENV
+
+  node-service-2:
+    image: "local/node-image:${TAG}"
+    command: node node-service-2
+    environment:
+      - NODE_ENV
+
+  service3:
+    image: "local/image2:${TAG}"
+    command: echo Hello from service3
+
+  service4:
+    image: "local/image3:${TAG}"
+    command: echo Hello from service4

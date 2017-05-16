@@ -1,0 +1,38 @@
+version: '2'
+
+volumes:
+  node-modules:
+    external: true
+  node-dist:
+    external: true
+
+services:
+  node-image-watcher:
+    image: "local/yarn"
+    working_dir: /code
+    entrypoint: /mount/guest-scripts/watch.sh
+    volumes:
+      - ./node-image:/mount
+      - /var/run/docker.sock:/var/run/docker.sock
+      - node-modules:/code/node_modules
+      - node-dist:/code/dist
+    depends_on:
+      - node-service-1
+      - node-service-2
+
+  # node-image based overrides
+  node-service-1:
+    entrypoint: /scripts/restarter.sh
+    volumes:
+      - ./node-image/guest-scripts:/scripts
+      - node-modules:/code/node_modules
+      - node-dist:/code/dist
+
+  node-service-2:
+    entrypoint: /scripts/restarter.sh
+    volumes:
+      - ./node-image/guest-scripts:/scripts
+      - node-modules:/code/node_modules
+      - node-dist:/code/dist
+
+# Clojure services and frontend done differently here...

@@ -1,0 +1,6 @@
+version: '2'
+
+services:
+  node-service-1:
+    environment:
+      - NODE_ENV=dev-override

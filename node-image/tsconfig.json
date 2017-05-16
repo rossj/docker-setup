@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "allowJs": false,
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "strictNullChecks": true,
+        "sourceMap": false,
+        "outDir": "./dist/",
+        "removeComments": true,
+        "rootDir": "./src"
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

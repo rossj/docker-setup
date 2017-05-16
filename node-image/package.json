@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@types/node": "^7.0.18",
+    "bluebird": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.3",
+    "typescript": "^2.3.2"
+  }
+}

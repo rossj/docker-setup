@@ -1,0 +1,10 @@
+version: '2'
+
+volumes:
+  empty: {}
+
+services:
+  node-image-watcher:
+    command: --watch
+
+# Clojure services and frontend done differently here...
